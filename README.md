@@ -1,27 +1,58 @@
-# SpotifyClone
+# Spotify Clone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+Ongoing project 
 
-## Development server
+# Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Versions](#versions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [To Do List](#to-do-list)
 
-## Code scaffolding
+&nbsp;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Versions
 
-## Build
+- Node.js: ```18.17.1```
+- Npm: ```10.2.0```
+- Angular: ```17.3.2```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+&nbsp;
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
 
-## Running end-to-end tests
+```bash 
+git clone https://github.com/biel4s/spotify-clone
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Go to new folder:
 
-## Further help
+```bash 
+cd spotify-clone
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Install all dependencies and required packages. You need [`nodejs`](https://nodejs.org/en/) & [`npm`](https://www.npmjs.com/) installed in your system.
+
+```bash
+npm install
+```
+
+&nbsp;
+
+## Usage
+
+To run the project, use the following command:
+
+```bash
+ng serve
+```
+
+Open [http://localhost:4200](http://localhost:4200) to view the project in your browser.
+
+&nbsp;
+
+## To Do List
+
+- 

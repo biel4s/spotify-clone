@@ -114,3 +114,27 @@ hr {
   margin: 0 auto;
   padding-bottom: 0;
 }
+
+.auth-signup {
+  padding: 16px 0;
+
+  &-heading {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &-text {
+    color: #86a7a7;
+  }
+
+  &-link {
+    color: white;
+    text-decoration: underline;
+    margin-left: 8px;
+
+    &:hover {
+      color: #1ed760;
+    }
+  }
+}

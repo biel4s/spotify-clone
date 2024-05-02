@@ -108,3 +108,65 @@ hr {
     color: #9e9e9e;
   }
 }
+
+.login-form {
+  width: 324px;
+  margin: 0 auto;
+  padding-bottom: 0;
+}
+
+.login-group {
+  padding-bottom: 16px;
+}
+
+.login-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding-block-end: 8px;
+}
+
+.login-input {
+  border: 0;
+  background-color: #121212;
+  box-shadow: inset 0 0 0 1px #878787;
+  border-radius: 4px;
+  inline-size: 100%;
+  font-size: 1rem;
+  padding-inline-start: 16px;
+  padding-inline-end: 16px;
+  padding-block-start: 12px;
+  padding-block-end: 12px;
+  min-block-size: 48px;
+
+  &:hover {
+    border-color: yellow;
+  }
+
+  &:active {
+    box-shadow: yellow;
+  }
+}
+
+.auth-signup {
+  padding: 16px 0;
+
+  &-heading {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &-text {
+    color: #86a7a7;
+  }
+
+  &-link {
+    color: white;
+    text-decoration: underline;
+    margin-left: 8px;
+
+    &:hover {
+      color: #1ed760;
+    }
+  }
+}

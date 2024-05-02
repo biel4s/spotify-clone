@@ -115,6 +115,38 @@ hr {
   padding-bottom: 0;
 }
 
+.login-group {
+  padding-bottom: 16px;
+}
+
+.login-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding-block-end: 8px;
+}
+
+.login-input {
+  border: 0;
+  background-color: #121212;
+  box-shadow: inset 0 0 0 1px #878787;
+  border-radius: 4px;
+  inline-size: 100%;
+  font-size: 1rem;
+  padding-inline-start: 16px;
+  padding-inline-end: 16px;
+  padding-block-start: 12px;
+  padding-block-end: 12px;
+  min-block-size: 48px;
+
+  &:hover {
+    border-color: yellow;
+  }
+
+  &:active {
+    box-shadow: yellow;
+  }
+}
+
 .auth-signup {
   padding: 16px 0;
 

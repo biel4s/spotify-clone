@@ -54,5 +54,3 @@ Open [http://localhost:4200](http://localhost:4200) to view the project in your 
 &nbsp;
 
 ## To Do List
-
-- 

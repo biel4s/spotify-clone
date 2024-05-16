@@ -1,6 +1,8 @@
+@import '../../../src/styles/variables';
+
 .auth-header {
-  padding: 32px 0px 32px 51px;
-  background-color: #121212;
+  padding: 32px 0 32px 51px;
+  background-color: $background-color;
 }
 
 .spotify-logo {
@@ -23,9 +25,9 @@
 .auth-form {
   max-width: 734px;
   width: 100%;
-  background-color: #121212;
+  background-color: $background-color;
   border-radius: 8px;
-  padding: 32px 0px;
+  padding: 32px 0;
   color: white;
 }
 
@@ -95,7 +97,7 @@ hr {
 }
 
 .auth-footer {
-  background-color: #121212;
+  background-color: $background-color;
   color: #9e9e9e;
   padding: 32px;
   text-align: center;
@@ -127,7 +129,7 @@ hr {
 
 .login-input {
   border: 0;
-  background-color: #121212;
+  background-color: $background-color;
   box-shadow: inset 0 0 0 1px #878787;
   border-radius: 4px;
   inline-size: 100%;
@@ -149,18 +151,15 @@ hr {
 
 .login-button {
   text-align: center;
-  padding: 32px 0px;
+  padding: 32px 0;
 }
 
 .login-submit {
   width: 100%;
   cursor: pointer;
-  color: black;
-  background-color: #1ED760;
-  border: 0;
   border-radius: 100px;
   height: 48px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.5px;
   font-size: 1rem;
 

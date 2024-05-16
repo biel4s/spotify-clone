@@ -1,6 +1,6 @@
 # Spotify Clone
 
-Ongoing project 
+Ongoing Spotify clone project with Angular Material
 
 # Table of Contents
 

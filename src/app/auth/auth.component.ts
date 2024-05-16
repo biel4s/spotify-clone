@@ -1,15 +1,41 @@
 import { Component } from '@angular/core';
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-auth',
   standalone: true,
   imports: [
-    MatButton
+    MatButton,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconButton,
+    MatIcon
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
+  isPasswordHidden: boolean = true;
 
+  readonly authForm = this.fb.nonNullable.group({
+    email: ['', [Validators.email, Validators.required]],
+    password: ['', [Validators.required]]
+  })
+
+  constructor(private readonly fb: FormBuilder) { }
+
+  togglePasswordVisibility(): void {
+    this.isPasswordHidden = !this.isPasswordHidden;
+  }
+
+  onSubmit(): void {
+    const credentials = this.authForm.getRawValue();
+    console.log(credentials);
+  }
 }

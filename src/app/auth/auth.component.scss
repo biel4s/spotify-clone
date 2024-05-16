@@ -115,10 +115,12 @@ hr {
   width: 324px;
   margin: 0 auto;
   padding-bottom: 0;
-}
 
-.login-group {
-  padding-bottom: 16px;
+  &-field {
+    padding-bottom: 16px;
+    width: 100%;
+    color: white;
+  }
 }
 
 .login-label {
@@ -128,7 +130,7 @@ hr {
 }
 
 .login-input {
-  border: 0;
+ /* border: 0;
   background-color: $background-color;
   box-shadow: inset 0 0 0 1px #878787;
   border-radius: 4px;
@@ -146,7 +148,7 @@ hr {
 
   &:active {
     box-shadow: yellow;
-  }
+  }*/
 }
 
 .login-button {

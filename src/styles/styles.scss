@@ -22,7 +22,7 @@ $spotify-clone-theme: mat.define-light-theme((
 
 @import "./variables";
 @import "./mixins";
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 * {
   margin: 0;
@@ -37,6 +37,19 @@ body {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
---mdc-outlined-text-field-label-text-color, --mdc-outlined-text-field-outline-color {
-  color: white !important; //Fix
+/*--mdc-outlined-text-field-label-text-color, --mdc-outlined-text-field-outline-color {     //Text and border
+  color: #878787 !important;
+  border-color: #878787 !important;
+}
+
+.mdc-outlined-text-field-hover-label-text-color {     //Text color on hover
+  color: white !important;
+}
+
+.mdc-outlined-text-field-hover-outline-color {     //Border color on hover
+  color: white !important;
+}*/
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label {     //Text color inside
+  color: #878787 !important;
 }

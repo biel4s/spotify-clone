@@ -30,26 +30,15 @@ $spotify-clone-theme: mat.define-light-theme((
   box-sizing: border-box;
 }
 
+html, body { height: 100%;}
+
+html {
+  --mdc-outlined-text-field-label-text-color: #878787;
+  --mdc-outlined-text-field-outline-color: #878787;
+  --mdc-outlined-text-field-hover-label-text-color: #878787;
+  --mdc-outlined-text-field-hover-outline-color: white;
+}
+
 body {
   font-family: "Nunito", sans-serif;
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-/*--mdc-outlined-text-field-label-text-color, --mdc-outlined-text-field-outline-color {     //Text and border
-  color: #878787 !important;
-  border-color: #878787 !important;
-}
-
-.mdc-outlined-text-field-hover-label-text-color {     //Text color on hover
-  color: white !important;
-}
-
-.mdc-outlined-text-field-hover-outline-color {     //Border color on hover
-  color: white !important;
-}*/
-
-.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label {     //Text color inside
-  color: #878787 !important;
 }

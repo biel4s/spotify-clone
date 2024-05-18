@@ -4,6 +4,7 @@ import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angula
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIcon} from "@angular/material/icon";
+import {MatCheckbox} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-auth',
@@ -15,13 +16,15 @@ import {MatIcon} from "@angular/material/icon";
     MatInputModule,
     ReactiveFormsModule,
     MatIconButton,
-    MatIcon
+    MatIcon,
+    MatCheckbox
   ],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
   isPasswordHidden: boolean = true;
+  isPasswordChecked: boolean = false;
 
   readonly authForm = this.fb.nonNullable.group({
     email: ['', [Validators.email, Validators.required]],

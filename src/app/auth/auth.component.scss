@@ -48,7 +48,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    border: 1px solid #878787;
+    border: 1px solid $secondary-background-color;
     border-radius: 50px;
     background-color: transparent;
     cursor: pointer;
@@ -123,7 +123,20 @@ hr {
 }
 
 .login-hide-password {
-  color: #878787;
+  color: $secondary-background-color;
+}
+
+.checkbox-label {
+  display: inline;
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 400;
+}
+
+.mat-mdc-checkbox.mat-primary {
+  --mdc-checkbox-unselected-icon-color: #878787;  //variables doesn't work
+  --mdc-checkbox-unselected-hover-icon-color: #878787;
+  --mdc-checkbox-unselected-focus-icon-color: #878787;
 }
 
 .login-button {

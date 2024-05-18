@@ -41,8 +41,9 @@
           </button>
         </mat-form-field>
       <div class="remember-password">
-        <input type="checkbox">
-        <span>Remember me</span>
+        <mat-checkbox class="login-checkbox" color="primary" [(ngModel)]="isPasswordChecked">
+          <p class="checkbox-label">Remember me</p>
+        </mat-checkbox>
       </div>
       <div class="login-button">
         <button mat-flat-button color="primary" type="submit" class="login-submit">Log In</button>

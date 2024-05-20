@@ -40,8 +40,9 @@
             <mat-icon class="login-hide-password">{{isPasswordHidden ? "visibility_off" : "visibility"}}</mat-icon>
           </button>
         </mat-form-field>
+      <mat-error>{{this.authService.errorMessege}}</mat-error>
       <div class="remember-password">
-        <mat-checkbox class="login-checkbox" color="primary" [(ngModel)]="isPasswordChecked">
+        <mat-checkbox class="login-checkbox" color="primary">
           <p class="checkbox-label">Remember me</p>
         </mat-checkbox>
       </div>

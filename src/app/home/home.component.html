@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="content">
+  <div *ngIf="authService.afAuth.authState | async as user">
+    <p>Hello {{ user.email }}</p>
+  </div>
+  <button (click)="authService.logout()">Logout</button>
+</div>
+

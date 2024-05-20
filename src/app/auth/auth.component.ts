@@ -5,6 +5,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIcon} from "@angular/material/icon";
 import {MatCheckbox} from "@angular/material/checkbox";
+import {AuthService} from "./auth.service";
 
 @Component({
   selector: 'app-auth',
@@ -31,7 +32,7 @@ export class AuthComponent {
     password: ['', [Validators.required]]
   })
 
-  constructor(private readonly fb: FormBuilder) { }
+  constructor(private readonly fb: FormBuilder, public readonly authService: AuthService) { }
 
   togglePasswordVisibility(): void {
     this.isPasswordHidden = !this.isPasswordHidden;
@@ -39,6 +40,7 @@ export class AuthComponent {
 
   onSubmit(): void {
     const credentials = this.authForm.getRawValue();
-    console.log(credentials);
+
+    this.authService.createWithEmail(credentials.email, credentials.password);
   }
 }

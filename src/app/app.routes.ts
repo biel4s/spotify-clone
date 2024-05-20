@@ -3,6 +3,6 @@ import {HomeComponent} from "./home/home.component";
 import {AuthComponent} from "./auth/auth.component";
 
 export const routes: Routes = [
-    {path: '', component: HomeComponent},
+    {path: 'home', component: HomeComponent},
     {path: 'login', component: AuthComponent}
 ];

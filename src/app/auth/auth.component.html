@@ -22,19 +22,29 @@
       </button></li>
     </ul>
     <hr>
-    <div class="login-form">
-      <div class="login-group">
-        <div class="login-label">Email or username</div>
-        <input type="text" class="login-input" placeholder="Email or username">
-      </div>
-      <div class="login-group">
-        <div class="login-label">Password</div>
-        <input type="password" class="login-input" placeholder="Password">
-        <div class="hide-password"></div>
-      </div>
+    <form (ngSubmit)="onSubmit()" class="login-form">
+        <mat-form-field class="login-form-field" appearance="outline">
+          <mat-label>Email or username</mat-label>
+          <input [formControl]="authForm.controls.email" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="login-form-field" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input [formControl]="authForm.controls.password" [type]="isPasswordHidden ? 'password' : 'text'" matInput autocomplete="off">
+          <button
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="isPasswordHidden"
+            mat-icon-button
+            matSuffix
+            type="button">
+            <mat-icon class="login-hide-password">{{isPasswordHidden ? "visibility_off" : "visibility"}}</mat-icon>
+          </button>
+        </mat-form-field>
+      <mat-error>{{this.authService.errorMessege}}</mat-error>
       <div class="remember-password">
-        <input type="checkbox">
-        <span>Remember me</span>
+        <mat-checkbox class="login-checkbox" color="primary">
+          <p class="checkbox-label">Remember me</p>
+        </mat-checkbox>
       </div>
       <div class="login-button">
         <button mat-flat-button color="primary" type="submit" class="login-submit">Log In</button>
@@ -42,7 +52,7 @@
       <div class="reset-password">
         <a href="" class="reset-password-link">Forgot your password?</a>
       </div>
-    </div>
+    </form>
     <hr>
     <div class="auth-signup">
       <h2 class="auth-signup-heading">
@@ -53,6 +63,7 @@
     </div>
   </div>
 </div>
+
 <div class="auth-footer">
   <p class="footer-text">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
 </div>

@@ -22,7 +22,7 @@ $spotify-clone-theme: mat.define-light-theme((
 
 @import "./variables";
 @import "./mixins";
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 * {
   margin: 0;
@@ -30,9 +30,16 @@ $spotify-clone-theme: mat.define-light-theme((
   box-sizing: border-box;
 }
 
+html, body { height: 100%;}
+
+html {
+  --mdc-outlined-text-field-label-text-color: #878787;
+  --mdc-outlined-text-field-outline-color: #878787;
+  --mdc-outlined-text-field-hover-label-text-color: #878787;
+  --mdc-outlined-text-field-hover-outline-color: white;
+  --mdc-outlined-text-field-input-text-color: white;
+}
+
 body {
   font-family: "Nunito", sans-serif;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

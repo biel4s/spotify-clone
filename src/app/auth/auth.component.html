@@ -7,12 +7,15 @@
 <div class="auth-content">
   <div class="auth-form">
     <h1 class="auth-heading">Log in to Spotify</h1>
+    <div class="auth-error">
+      <mat-error class="auth-error-messege">{{authService.errorMessege}}</mat-error>
+    </div>
     <ul class="auth-providers">
-      <li><button class="auth-providers-button">
+      <li><button class="auth-providers-button" (click)="authService.googleAuth()">
         <span class="google-icon"></span>
         <span class="auth-providers-text">Continue with Google</span>
       </button></li>
-      <li><button class="auth-providers-button">
+      <li><button class="auth-providers-button" (click)="authService.facebookAuth()">
         <span class="facebook-icon"></span>
         <span class="auth-providers-text">Continue with Facebook</span>
       </button></li>
@@ -25,7 +28,10 @@
     <form (ngSubmit)="onSubmit()" class="login-form">
         <mat-form-field class="login-form-field" appearance="outline">
           <mat-label>Email or username</mat-label>
-          <input [formControl]="authForm.controls.email" matInput autocomplete="off">
+          <input [formControl]="authForm.controls.email" (blur)="updateErrorMessage()" matInput autocomplete="off">
+         <!-- @if (authForm.controls.email.invalid) {
+            <mat-error>{{invalidEmail}}</mat-error>
+          }-->
         </mat-form-field>
         <mat-form-field class="login-form-field" appearance="outline">
           <mat-label>Password</mat-label>
@@ -40,7 +46,6 @@
             <mat-icon class="login-hide-password">{{isPasswordHidden ? "visibility_off" : "visibility"}}</mat-icon>
           </button>
         </mat-form-field>
-      <mat-error>{{this.authService.errorMessege}}</mat-error>
       <div class="remember-password">
         <mat-checkbox class="login-checkbox" color="primary">
           <p class="checkbox-label">Remember me</p>

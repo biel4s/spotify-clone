@@ -36,6 +36,17 @@
   text-align: center;
 }
 
+.auth-error {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 24px;
+
+  &-messege {
+    width: 70%;
+  }
+}
+
 .auth-providers {
   list-style: none;
   display: flex;

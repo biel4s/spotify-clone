@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
 import firebase from "firebase/compat";
+import {GoogleAuthProvider} from 'firebase/auth'
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,11 @@ export class AuthService {
   user: firebase.User | null = null;
   errorMessege: string = '';
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  constructor(public afAuth: AngularFireAuth, private router: Router) { }
 
+  async googleAuth(): Promise<void> {
+    await this.afAuth.signInWithPopup(new GoogleAuthProvider());
+    await this.router.navigate(['/home']).then();
   }
 
   createWithEmail(email: string, password: string): void {

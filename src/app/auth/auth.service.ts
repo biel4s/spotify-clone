@@ -23,6 +23,11 @@ export class AuthService {
     await this.router.navigate(['/home']).then();
   }
 
+  async appleAuth(): Promise<void> {
+    await this.afAuth.signInWithPopup(new OAuthProvider('apple.com'));
+    await this.router.navigate(['/home']).then();
+  }
+
   createWithEmail(email: string, password: string): void {
     this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {

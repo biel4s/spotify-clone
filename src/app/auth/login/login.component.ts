@@ -9,11 +9,13 @@ import {AuthService} from "../auth.service";
 import {merge} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {FooterComponent} from "../../shared/components/footer/footer.component";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-login',
   standalone: true,
     imports: [
+        CommonModule,
         FormsModule,
         MatButton,
         MatCheckbox,
@@ -64,7 +66,6 @@ export class LoginComponent {
 
   onSubmit(): void {
     const credentials = this.authForm.getRawValue();
-
     this.authService.loginWithEmail(credentials.email, credentials.password);
   }
 }

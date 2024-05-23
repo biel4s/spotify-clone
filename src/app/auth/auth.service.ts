@@ -10,6 +10,7 @@ import {GoogleAuthProvider, FacebookAuthProvider, OAuthProvider } from 'firebase
 export class AuthService {
   user: firebase.User | null = null;
   errorMessege: string = '';
+  resetMessege: string = '';
 
   constructor(public afAuth: AngularFireAuth, private router: Router) { }
 
@@ -48,6 +49,10 @@ export class AuthService {
       .catch((error) => {
         this.errorMessege = error.message;
       });
+  }
+
+  async resetPassword(email: string): Promise<void> {
+    await this.afAuth.sendPasswordResetEmail(email);
   }
 
   logout(): void {

@@ -4,30 +4,53 @@ import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angula
 import {MatButton} from "@angular/material/button";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
+import {AuthService} from "../auth.service";
+import {CommonModule} from "@angular/common";
+import {Router} from "@angular/router";
+import {MatIconModule} from "@angular/material/icon";
 
 @Component({
   selector: 'app-password-reset',
   standalone: true,
   imports: [
+    CommonModule,
     FooterComponent,
     FormsModule,
     MatButton,
     MatFormField,
     MatInput,
     MatLabel,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   templateUrl: './password-reset.component.html',
   styleUrl: './password-reset.component.scss'
 })
 export class PasswordResetComponent {
+  isPasswordSent: boolean = false;
+
   readonly resetForm = this.fb.nonNullable.group({
-    account: ['', [Validators.email, Validators.required]],
+    account: ['', [Validators.required, Validators.email]],
   })
 
-  constructor(private readonly fb: FormBuilder) {}
+  constructor(private readonly fb: FormBuilder, private readonly authService: AuthService, private router: Router) {}
+
+  goToLoginPage(): void {
+    this.router.navigate(['/login']).then();
+  }
+
+  changeState(): void {
+    this.isPasswordSent = false;
+  }
 
   onSubmit(): void {
-
+    const credentials: {account: string} = this.resetForm.getRawValue();
+    this.authService.resetPassword(credentials.account)
+      .then((): void => {
+        this.isPasswordSent = true;
+      })
+      .catch((error): void => {
+        console.log(error)
+      });
   }
 }

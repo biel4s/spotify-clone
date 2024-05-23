@@ -1,4 +1,5 @@
 @import '../../../../src/styles/variables';
+@import "../../../../src/styles/mixins";
 
 .login-header {
   padding: 32px 0 32px 51px;
@@ -156,13 +157,7 @@ hr {
 }
 
 .login-submit {
-  width: 100%;
-  cursor: pointer;
-  border-radius: 100px;
-  height: 48px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 1rem;
+  @include submit-button();
 
   &:hover {
     transform: scale(1.05);

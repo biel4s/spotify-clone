@@ -1,0 +1,11 @@
+@import "variables";
+
+@mixin submit-button {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 100px;
+  height: 48px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}

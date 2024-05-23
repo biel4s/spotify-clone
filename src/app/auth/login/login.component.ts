@@ -1,33 +1,36 @@
 import { Component } from '@angular/core';
-import {MatButton, MatIconButton} from "@angular/material/button";
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatInputModule} from "@angular/material/input";
-import {MatIcon} from "@angular/material/icon";
+import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
-import {AuthService} from "./auth.service";
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {MatError, MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
+import {MatIcon} from "@angular/material/icon";
+import {MatInput} from "@angular/material/input";
+import {AuthService} from "../auth.service";
 import {merge} from "rxjs";
-import {CommonModule} from "@angular/common";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {FooterComponent} from "../../shared/components/footer/footer.component";
 
 @Component({
-  selector: 'app-auth',
+  selector: 'app-login',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatButton,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatIconButton,
-    MatIcon,
-    MatCheckbox
-  ],
-  templateUrl: './auth.component.html',
-  styleUrl: './auth.component.scss'
+    imports: [
+        FormsModule,
+        MatButton,
+        MatCheckbox,
+        MatError,
+        MatFormField,
+        MatIcon,
+        MatIconButton,
+        MatInput,
+        MatLabel,
+        MatSuffix,
+        ReactiveFormsModule,
+        FooterComponent
+    ],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
-export class AuthComponent {
+export class LoginComponent {
   isPasswordHidden: boolean = true;
   isPasswordChecked: boolean = false;
   invalidEmail: string = '';
@@ -62,6 +65,6 @@ export class AuthComponent {
   onSubmit(): void {
     const credentials = this.authForm.getRawValue();
 
-    this.authService.createWithEmail(credentials.email, credentials.password);
+    this.authService.loginWithEmail(credentials.email, credentials.password);
   }
 }

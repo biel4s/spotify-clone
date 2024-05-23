@@ -1,0 +1,70 @@
+<div class="login-header">
+  <div class="spotify-logo">
+    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="Spotify Logo" class="spotify-icon">
+  </div>
+</div>
+<div class="login-content">
+  <div class="login-container">
+    <h1 class="login-heading">Log in to Spotify</h1>
+    <div class="login-error">
+      <mat-error class="login-error-messege">{{authService.errorMessege}}</mat-error>
+    </div>
+    <ul class="login-providers">
+      <li><button class="login-providers-button" (click)="authService.googleAuth()">
+        <span class="google-icon"></span>
+        <span class="login-providers-text">Continue with Google</span>
+      </button></li>
+      <li><button class="login-providers-button" (click)="authService.facebookAuth()">
+        <span class="facebook-icon"></span>
+        <span class="login-providers-text">Continue with Facebook</span>
+      </button></li>
+      <li><button class="login-providers-button" (click)="authService.appleAuth()">
+        <span class="apple-icon"></span>
+        <span class="login-providers-text">Continue with Apple</span>
+      </button></li>
+    </ul>
+    <hr>
+    <form (ngSubmit)="onSubmit()" class="login-form">
+      <mat-form-field class="login-form-field" appearance="outline">
+        <mat-label>Email or username</mat-label>
+        <input [formControl]="authForm.controls.email" (blur)="updateErrorMessage()" matInput autocomplete="off">
+        <!-- @if (authForm.controls.email.invalid) {
+           <mat-error>{{invalidEmail}}</mat-error>
+         }-->
+      </mat-form-field>
+      <mat-form-field class="login-form-field" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input [formControl]="authForm.controls.password" [type]="isPasswordHidden ? 'password' : 'text'" matInput autocomplete="off">
+        <button
+          (click)="togglePasswordVisibility()"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="isPasswordHidden"
+          mat-icon-button
+          matSuffix
+          type="button">
+          <mat-icon class="login-hide-password">{{isPasswordHidden ? "visibility_off" : "visibility"}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="remember-password">
+        <mat-checkbox class="login-checkbox" color="primary">
+          <p class="checkbox-label">Remember me</p>
+        </mat-checkbox>
+      </div>
+      <div class="login-button">
+        <button mat-flat-button color="primary" type="submit" class="login-submit">Log In</button>
+      </div>
+      <div class="reset-password">
+        <a href="/password-reset" class="reset-password-link">Forgot your password?</a>
+      </div>
+    </form>
+    <hr>
+    <div class="login-signup">
+      <h2 class="login-signup-heading">
+        <span class="login-signup-text">Don't have an account?
+        </span>
+        <a href="/signup" class="login-signup-link">Sign up for Spotify</a>
+      </h2>
+    </div>
+  </div>
+</div>
+<app-footer />

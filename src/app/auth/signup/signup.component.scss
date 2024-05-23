@@ -1,0 +1,15 @@
+@import '../../../../src/styles/variables';
+
+.login-header {
+  padding: 32px 0 32px 51px;
+  background-color: $background-color;
+}
+
+.spotify-logo {
+  display: flex;
+}
+
+.spotify-icon {
+  width: 117px;
+  height: 36px;
+}

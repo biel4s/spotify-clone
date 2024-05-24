@@ -6,8 +6,11 @@
 <div class="login-content">
   <div class="login-container">
     <h1 class="login-heading">Log in to Spotify</h1>
-    <div class="login-error">
-      <mat-error class="login-error-messege">{{authService.errorMessege}}</mat-error>
+    <div class="login-error" *ngIf="authService.errorMessege">
+      <div class="login-error-box">
+        <mat-icon>error_outline</mat-icon>
+        <mat-error class="login-error-messege">{{authService.errorMessege}}</mat-error>
+      </div>
     </div>
     <ul class="login-providers">
       <li><button class="login-providers-button" (click)="authService.googleAuth()">

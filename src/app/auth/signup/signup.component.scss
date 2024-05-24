@@ -1,4 +1,12 @@
 @import '../../../../src/styles/variables';
+@import '../../../../src/styles/mixins';
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  min-block-size: 100%;
+}
 
 .login-header {
   padding: 32px 0 32px 51px;
@@ -12,4 +20,113 @@
 .spotify-icon {
   width: 117px;
   height: 36px;
+}
+
+.signup {
+  &-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: $background-color;
+  }
+
+  &-wrapper {
+    width: 324px;
+  }
+
+  &-heading {
+    padding-bottom: 8px;
+  }
+}
+
+.signup-form-field {
+  width: 100%;
+}
+
+
+.signup-button {
+  text-align: center;
+}
+
+.signup-submit {
+  @include submit-button();
+}
+
+.signup-divider {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
+  ::before {
+    content: "";
+    background: #ffffff80;
+    border-radius: 5px;
+    height: 2px;
+    width: 50%;
+    margin-right: 10px;
+  }
+}
+
+.signup-full-divider {
+  position: relative;
+  margin-top: 32px;
+
+  ::before {
+    content: " ";
+    height: 1px;
+    background-color: #dedede;
+    opacity: 0.3;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.signup-providers {
+  @include auth-providers();
+}
+
+.google-icon {
+  background: url(https://accounts.scdn.co/sso/images/new-google-icon.72fd940a229bc94cf9484a3320b3dccb.svg) center center no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.facebook-icon {
+  background: url(https://accounts.scdn.co/sso/images/new-facebook-icon.eae8e1b6256f7ccf01cf81913254e70b.svg) center center no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.apple-icon {
+  background: url(https://accounts.scdn.co/sso/images/new-apple-icon.e356139ea90852da2e60f1ff738f3cbb.svg) center center no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.signup-login {
+  padding-top: 32px;
+
+  &-heading {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &-text {
+    color: #86a7a7;
+  }
+
+  &-link {
+    color: white;
+    text-decoration: underline;
+    margin-left: 8px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }

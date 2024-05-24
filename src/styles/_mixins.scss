@@ -9,3 +9,37 @@
   letter-spacing: 0.5px;
   font-size: 1rem;
 }
+
+@mixin auth-providers {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 324px;
+  margin-top: 32px;
+
+  &-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid $secondary-background-color;
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 8px;
+    inline-size: 100%;
+    height: 48px;
+    padding-inline-start: 31px;
+    padding-inline-end: 31px;
+
+    &:hover {
+      border-color: white;
+    }
+  }
+
+  &-text {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: auto;
+  }
+}

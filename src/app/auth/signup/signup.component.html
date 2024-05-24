@@ -1,9 +1,44 @@
-<div class="login-header">
-  <div class="spotify-logo">
-    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="Spotify Logo" class="spotify-icon">
+<div class="signup-container">
+  <div class="login-header">
+    <div class="spotify-logo">
+      <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="Spotify Logo" class="spotify-icon">
+    </div>
   </div>
+  <div class="signup-content">
+    <div class="signup-wrapper">
+      <h1 class="signup-heading">Sign up to start listening.</h1>
+      <form (ngSubmit)="onSubmit()" class="signup-form">
+        <mat-form-field class="signup-form-field" appearance="outline">
+          <mat-label>Email</mat-label><!--For now-->
+          <input [formControl]="signupForm.controls.account" matInput autocomplete="off">
+        </mat-form-field>
+        <div class="signup-button">
+          <button mat-flat-button color="primary" type="submit" class="signup-submit">Next</button>
+        </div>
+      </form>
+      <div class="signup-divider"><span class="signup-divider-text">or</span></div>
+      <ul class="signup-providers">
+        <li><button class="signup-providers-button" (click)="authService.googleAuth()">
+          <span class="google-icon"></span>
+          <span class="signup-providers-text">Continue with Google</span>
+        </button></li>
+        <li><button class="signup-providers-button" (click)="authService.facebookAuth()">
+          <span class="facebook-icon"></span>
+          <span class="signup-providers-text">Continue with Facebook</span>
+        </button></li>
+        <li><button class="signup-providers-button" (click)="authService.appleAuth()">
+          <span class="apple-icon"></span>
+          <span class="signup-providers-text">Continue with Apple</span>
+        </button></li>
+      </ul>
+      <div class="signup-full-divider"><span class="signup-divider-span"></span></div>
+      <div class="signup-login">
+        <h2 class="signup-login-heading">
+          <span class="signup-login-text">Already have an account?</span>
+          <a href="/login" class="signup-login-link">Log in here.</a>
+        </h2>
+      </div>
+  </div>
+  </div>
+  <app-footer />
 </div>
-<div class="signup-content">
-
-</div>
-<app-footer />

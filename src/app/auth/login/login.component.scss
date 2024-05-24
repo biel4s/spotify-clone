@@ -1,7 +1,7 @@
 @import '../../../../src/styles/variables';
 @import "../../../../src/styles/mixins";
 
-.login-header {
+.auth-header {
   padding: 32px 0 32px 51px;
   background-color: $background-color;
 }
@@ -41,45 +41,30 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 24px;
+  padding: 0 50px;
+  margin-bottom: 20px;
+
+  &-box {
+    background-color: #e91429;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-block-start: 12px;
+    padding-block-end: 12px;
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+  }
 
   &-messege {
-    width: 70%;
+    color: white;
+    text-align: center;
+    font-size: 0.875rem;
   }
 }
 
 .login-providers {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  width: 324px;
   margin: 0 auto;
-
-  &-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    border: 1px solid $secondary-background-color;
-    border-radius: 50px;
-    background-color: transparent;
-    cursor: pointer;
-    margin-bottom: 8px;
-    inline-size: 100%;
-    height: 48px;
-    padding-inline-start: 31px;
-    padding-inline-end: 31px;
-
-    &:hover {
-      border-color: white;
-    }
-  }
-
-  &-text {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: auto;
-  }
+  @include auth-providers();
 }
 
 .google-icon {

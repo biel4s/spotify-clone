@@ -56,15 +56,25 @@
 .signup-divider {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 32px;
 
-  ::before {
+  &::before {
     content: "";
     background: #ffffff80;
     border-radius: 5px;
-    height: 2px;
+    height: 1px;
     width: 50%;
     margin-right: 10px;
+  }
+
+  &::after {
+    content: "";
+    background: #ffffff80;
+    border-radius: 5px;
+    height: 1px;
+    width: 50%;
+    margin-left: 10px;
   }
 }
 

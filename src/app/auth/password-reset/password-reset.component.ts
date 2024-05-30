@@ -30,7 +30,7 @@ export class PasswordResetComponent {
   isPasswordSent: boolean = false;
 
   readonly resetForm = this.fb.nonNullable.group({
-    account: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.email]],
   })
 
   constructor(private readonly fb: FormBuilder, private readonly authService: AuthService, private router: Router) {}
@@ -44,8 +44,8 @@ export class PasswordResetComponent {
   }
 
   onSubmit(): void {
-    const credentials: {account: string} = this.resetForm.getRawValue();
-    this.authService.resetPassword(credentials.account)
+    const credentials: {email: string} = this.resetForm.getRawValue();
+    this.authService.resetPassword(credentials.email)
       .then((): void => {
         this.isPasswordSent = true;
       })

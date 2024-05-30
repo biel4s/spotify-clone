@@ -5,30 +5,32 @@ import {MatCheckbox} from "@angular/material/checkbox";
 import {MatError, MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatIcon} from "@angular/material/icon";
 import {MatInput} from "@angular/material/input";
-import {AuthService} from "../auth.service";
+import {AuthService, Credentials} from "../auth.service";
 import {merge} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {FooterComponent} from "../../shared/components/footer/footer.component";
 import {CommonModule} from "@angular/common";
+import {MatSlideToggle} from "@angular/material/slide-toggle";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-    imports: [
-        CommonModule,
-        FormsModule,
-        MatButton,
-        MatCheckbox,
-        MatError,
-        MatFormField,
-        MatIcon,
-        MatIconButton,
-        MatInput,
-        MatLabel,
-        MatSuffix,
-        ReactiveFormsModule,
-        FooterComponent
-    ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButton,
+    MatCheckbox,
+    MatError,
+    MatFormField,
+    MatIcon,
+    MatIconButton,
+    MatInput,
+    MatLabel,
+    MatSuffix,
+    ReactiveFormsModule,
+    FooterComponent,
+    MatSlideToggle
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -65,7 +67,7 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    const credentials = this.authForm.getRawValue();
+    const credentials: Credentials = this.authForm.getRawValue();
     this.authService.loginWithEmail(credentials.email, credentials.password);
   }
 }

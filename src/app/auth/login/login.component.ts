@@ -10,25 +10,27 @@ import {merge} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {FooterComponent} from "../../shared/components/footer/footer.component";
 import {CommonModule} from "@angular/common";
+import {MatSlideToggle} from "@angular/material/slide-toggle";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-    imports: [
-        CommonModule,
-        FormsModule,
-        MatButton,
-        MatCheckbox,
-        MatError,
-        MatFormField,
-        MatIcon,
-        MatIconButton,
-        MatInput,
-        MatLabel,
-        MatSuffix,
-        ReactiveFormsModule,
-        FooterComponent
-    ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatButton,
+    MatCheckbox,
+    MatError,
+    MatFormField,
+    MatIcon,
+    MatIconButton,
+    MatInput,
+    MatLabel,
+    MatSuffix,
+    ReactiveFormsModule,
+    FooterComponent,
+    MatSlideToggle
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

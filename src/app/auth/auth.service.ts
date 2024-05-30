@@ -4,6 +4,11 @@ import {Router} from "@angular/router";
 import firebase from "firebase/compat";
 import {GoogleAuthProvider, FacebookAuthProvider, OAuthProvider } from 'firebase/auth'
 
+export interface Credentials {
+  email: string;
+  password: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })

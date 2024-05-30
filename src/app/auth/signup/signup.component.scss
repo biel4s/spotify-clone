@@ -44,6 +44,13 @@
   width: 100%;
 }
 
+.login-error {
+  @include error-box;
+
+  &-messege {
+    width: 100%;
+  }
+}
 
 .signup-button {
   text-align: center;

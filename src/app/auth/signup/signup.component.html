@@ -4,14 +4,20 @@
       <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="Spotify Logo" class="spotify-icon">
     </div>
   </div>
-  <div class="signup-content">
+  <div *ngIf="!isEmailCorrect; else emailCorrect" class="signup-content">
     <div class="signup-wrapper">
       <h1 class="signup-heading">Sign up to start listening.</h1>
       <form (ngSubmit)="onSubmit()" class="signup-form">
         <mat-form-field class="signup-form-field" appearance="outline">
           <mat-label>Email</mat-label><!--For now-->
-          <input [formControl]="signupForm.controls.account" matInput autocomplete="off">
+          <input [formControl]="signupForm.controls.email" matInput autocomplete="off">
         </mat-form-field>
+        <div class="login-error" *ngIf="authService.errorMessege">
+          <div class="login-error-box">
+            <mat-icon>error_outline</mat-icon>
+            <mat-error class="login-error-messege">{{authService.errorMessege}}</mat-error>
+          </div>
+        </div>
         <div class="signup-button">
           <button mat-flat-button color="primary" type="submit" class="signup-submit">Next</button>
         </div>
@@ -38,7 +44,12 @@
           <a href="/login" class="signup-login-link">Log in here.</a>
         </h2>
       </div>
+    </div>
   </div>
-  </div>
+  <ng-template #emailCorrect>
+    <div class="password-reset-content">
+      test
+    </div>
+  </ng-template>
   <app-footer />
 </div>
